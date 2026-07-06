@@ -6,3 +6,8 @@ node_modules/
 
 # Log files
 *.log
+
+# I accidently started work on sth from task 5
+# Please just ignore this :]
+routes/products.js
+productscontroller.js
