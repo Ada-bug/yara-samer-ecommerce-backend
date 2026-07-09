@@ -11,7 +11,6 @@ const mongoose = require('mongoose')
 
 
 // GET /api/products  —  list all products
-
 const getProducts = asyncHandler(async (req, res) => {
     const {
         minPrice,

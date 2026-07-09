@@ -19,6 +19,7 @@ app.use(express.json());
 const productRoutes = require('./routes/products');
 const categoriesRoutes = require('./routes/categories');
 const cartRoutes = require('./routes/carts')
+const orderRoutes = require('./routes/orders');
 // note: why do we need both??? can't we just make ONE CRUD??
 // it's really redundant in my opinion :[
 
@@ -26,6 +27,7 @@ const cartRoutes = require('./routes/carts')
 app.use('/api/products', productRoutes);
 app.use('/api/categories', categoriesRoutes);
 app.use('/api/cart', cartRoutes);
+app.use('/api/orders', orderRoutes)
 
 // Middleware:
 app.use(notFound);

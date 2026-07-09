@@ -161,8 +161,6 @@ const updateQuantity = asyncHandler(async (req, res) => {
 
 
     const quantity = Number(req.body.quantity);
-
-
     if (!Number.isInteger(quantity) || quantity < 1) {
         throw new AppError(
             "Quantity must be at least 1.",
