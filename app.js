@@ -17,13 +17,15 @@ app.use(express.json());
 
 // Import routes
 const productRoutes = require('./routes/products');
-const categoriesRoutes = require('./routes/categories')
+const categoriesRoutes = require('./routes/categories');
+const cartRoutes = require('./routes/carts')
 // note: why do we need both??? can't we just make ONE CRUD??
 // it's really redundant in my opinion :[
 
 // Use routes with a base path
 app.use('/api/products', productRoutes);
-app.use('/api/categories', categoriesRoutes)
+app.use('/api/categories', categoriesRoutes);
+app.use('/api/cart', cartRoutes);
 
 // Middleware:
 app.use(notFound);
