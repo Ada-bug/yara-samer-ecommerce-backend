@@ -1,0 +1,1108 @@
+{
+  "info": {
+    "_postman_id": "e5c1ddbd-ed94-47e3-a16c-c70c33a574ba",
+    "name": "e-commerce-api",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55894515",
+    "_collection_link": "https://go.postman.co/collection/55894515-e5c1ddbd-ed94-47e3-a16c-c70c33a574ba?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "categories-api",
+      "item": [
+        {
+          "name": "/api/categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BaseURL}}/api/categories",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/api/categories/:id1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BaseURL}}/api/categories/{{categoryId}}",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "categories",
+                "{{categoryId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "edits category values",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"_id\": \"6a4ac4b27ca17c886e0530bb\",\r\n    \"name\": \"Clothing\",\r\n    \"description\": \"Things you wear\",\r\n    \"slug\": \"clothing\",\r\n    \"__v\": 0,\r\n    \"createdAt\": \"2026-07-06T13:03:00.742Z\",\r\n    \"updatedAt\": \"2026-07-06T13:03:00.742Z\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BaseURL}}/api/categories/{{categoryId}}",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "categories",
+                "{{categoryId}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "edits category values",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"_id\": \"6a4ac4b27ca17c886e0530bb\",\r\n    \"name\": \"Clothing\",\r\n    \"description\": \"Things you wear\",\r\n    \"slug\": \"clothing\",\r\n    \"__v\": 0,\r\n    \"createdAt\": \"2026-07-06T13:03:00.742Z\",\r\n    \"updatedAt\": \"2026-07-06T13:03:00.742Z\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BaseURL}}/api/categories/{{categoryId}}",
+                  "host": [
+                    "{{BaseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categories",
+                    "{{categoryId}}"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"_id\": \"6a4ac4b27ca17c886e0530bb\",\n        \"name\": \"Clothing\",\n        \"description\": \"Things you wear\",\n        \"slug\": \"clothing\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-07-10T12:05:10.118Z\",\n        \"updatedAt\": \"2026-07-10T12:08:52.193Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "adds a new category",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Body parts\",\r\n    \"description\": \"frozen organs\",\r\n    \"slug\": \"body-parts\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BaseURL}}/api/categories",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "adds a new category",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Body parts\",\r\n    \"description\": \"frozen organs\",\r\n    \"slug\": \"body-parts\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BaseURL}}/api/categories",
+                  "host": [
+                    "{{BaseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categories"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"name\": \"Body parts\",\n        \"description\": \"frozen organs\",\n        \"slug\": \"body-parts\",\n        \"_id\": \"6a50e0e40bb186087589d036\",\n        \"createdAt\": \"2026-07-10T12:09:08.784Z\",\n        \"updatedAt\": \"2026-07-10T12:09:08.784Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "deletes category",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{BaseURL}}/api/categories/{{categoryId}}",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "categories",
+                "{{categoryId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "products-api",
+      "item": [
+        {
+          "name": "all products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BaseURL}}/api/products",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "category filter",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BaseURL}}/api/products?category=Electronics",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "Electronics"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "minPrice and maxPrice",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BaseURL}}/api/products",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "minPrice",
+                  "value": "50"
+                },
+                {
+                  "key": "maxPrice",
+                  "value": "2000"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "search filter",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BaseURL}}/api/products",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "Potato"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "inStock filter",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BaseURL}}/api/products",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "inStock",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "by product_id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BaseURL}}/api/products/{{productId}}",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "products",
+                "{{productId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update product values",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"_id\": \"6a4ac9cb8cacb94daf2c46c2\",\r\n    \"name\": \"Beans\",\r\n    \"description\": \"Soy, black, white and green beans\",\r\n    \"price\": 60070,\r\n    \"category\": \"6a4ab3267ca17c886e0530ae\",\r\n    \"inStock\": true,\r\n    \"stock\": 4,\r\n    \"images\": [\r\n        \"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhealthy-food-near-me.com%2Fwp-content%2Fuploads%2F2022%2F09%2Fbeans-varieties-and-types-photo-with-description-8.jpg&f=1&nofb=1&ipt=2d8e2a36fe218fe8dfb11ffa6a104f848d04636a91708d8866d8222cb03795e0\"\r\n    ],\r\n    \"createdAt\": \"2026-07-05T21:16:59.128Z\",\r\n    \"updatedAt\": \"2026-07-05T21:16:59.128Z\",\r\n    \"__v\": 0\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BaseURL}}/api/products/{{productId}}",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "products",
+                "{{productId}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "changed the desc. of the beans",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"_id\": \"6a4ac9cb8cacb94daf2c46c2\",\r\n    \"name\": \"Beans\",\r\n    \"description\": \"Soy, black, white and green beans\",\r\n    \"price\": 60070,\r\n    \"category\": \"6a4ab3267ca17c886e0530ae\",\r\n    \"inStock\": true,\r\n    \"stock\": 4,\r\n    \"images\": [\r\n        \"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhealthy-food-near-me.com%2Fwp-content%2Fuploads%2F2022%2F09%2Fbeans-varieties-and-types-photo-with-description-8.jpg&f=1&nofb=1&ipt=2d8e2a36fe218fe8dfb11ffa6a104f848d04636a91708d8866d8222cb03795e0\"\r\n    ],\r\n    \"createdAt\": \"2026-07-05T21:16:59.128Z\",\r\n    \"updatedAt\": \"2026-07-05T21:16:59.128Z\",\r\n    \"__v\": 0\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BaseURL}}/api/products/{{productId}}",
+                  "host": [
+                    "{{BaseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "products",
+                    "{{productId}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "560"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"230-1A181NP19nM73Hd1+ikjyMceAls\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Jul 2026 19:49:26 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"_id\": \"6a4ac9cb8cacb94daf2c46c2\",\n        \"name\": \"Beans\",\n        \"description\": \"Soy, black, white and green beans\",\n        \"price\": 60070,\n        \"category\": \"6a4ab3267ca17c886e0530ae\",\n        \"inStock\": true,\n        \"stock\": 4,\n        \"images\": [\n            \"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhealthy-food-near-me.com%2Fwp-content%2Fuploads%2F2022%2F09%2Fbeans-varieties-and-types-photo-with-description-8.jpg&f=1&nofb=1&ipt=2d8e2a36fe218fe8dfb11ffa6a104f848d04636a91708d8866d8222cb03795e0\"\n        ],\n        \"createdAt\": \"2026-07-05T21:16:59.128Z\",\n        \"updatedAt\": \"2026-07-09T19:49:26.033Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "new product",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Love potion\",\r\n    \"description\": \"A totally legit love potion\",\r\n    \"price\": 778899,\r\n    \"category\": \"6a4ab3267ca17c886e0530ae\",\r\n    \"inStock\": true,\r\n    \"stock\": 15,\r\n    \"images\": []\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BaseURL}}/api/products/",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "products",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "added love potion",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Love potion\",\r\n    \"description\": \"A totally legit love potion\",\r\n    \"price\": 778899,\r\n    \"category\": \"6a4ab3267ca17c886e0530ae\",\r\n    \"inStock\": true,\r\n    \"stock\": 15,\r\n    \"images\": []\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BaseURL}}/api/products/",
+                  "host": [
+                    "{{BaseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "products",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "304"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"130-59VqADQUsYxfuTx1I6NNUznTtgk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Jul 2026 19:50:32 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"name\": \"Love potion\",\n        \"description\": \"A totally legit love potion\",\n        \"price\": 778899,\n        \"category\": \"6a4ab3267ca17c886e0530ae\",\n        \"inStock\": true,\n        \"stock\": 15,\n        \"images\": [],\n        \"_id\": \"6a4ffb88462f807b914ce9d0\",\n        \"createdAt\": \"2026-07-09T19:50:32.719Z\",\n        \"updatedAt\": \"2026-07-09T19:50:32.719Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "remove product with id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Love potion\",\r\n    \"description\": \"A totally legit love potion\",\r\n    \"price\": 778899,\r\n    \"category\": \"6a4ab3267ca17c886e0530ae\",\r\n    \"inStock\": true,\r\n    \"stock\": 15,\r\n    \"images\": []\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BaseURL}}/api/products/6a4d7c0959ae79c08d326711",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "products",
+                "6a4d7c0959ae79c08d326711"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "cart-api",
+      "item": [
+        {
+          "name": "gets/creates cart",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Love potion\",\r\n    \"description\": \"A totally legit love potion\",\r\n    \"price\": 778899,\r\n    \"category\": \"6a4ab3267ca17c886e0530ae\",\r\n    \"inStock\": true,\r\n    \"stock\": 15,\r\n    \"images\": []\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BaseURL}}/api/cart",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "cart"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add item to cart",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"productId\": \"6a4ac9cb8cacb94daf2c46c2\",\r\n    \"totalPrice\": 0,\r\n    \"createdAt\": \"2026-07-07T22:27:06.908Z\",\r\n    \"updatedAt\": \"2026-07-07T22:27:06.908Z\",\r\n    \"__v\": 0\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BaseURL}}/api/cart/items",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "cart",
+                "items"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "added potato item",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"productId\": \"6a493c3d817c6ca54965505d\",\r\n    \"totalPrice\": 0,\r\n    \"createdAt\": \"2026-07-07T22:27:06.908Z\",\r\n    \"updatedAt\": \"2026-07-07T22:27:06.908Z\",\r\n    \"__v\": 0\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BaseURL}}/api/cart/items",
+                  "host": [
+                    "{{BaseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "cart",
+                    "items"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "279"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"117-mLRcJsm0AQM8bKOJZRXv7+z1dUc\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Jul 2026 19:44:32 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"_id\": \"6a4d7d3aa00a43f31577d775\",\n        \"items\": [\n            {\n                \"product\": \"6a493c3d817c6ca54965505d\",\n                \"quantity\": 1,\n                \"price\": 100000,\n                \"_id\": \"6a4ffa20462f807b914ce9c9\"\n            }\n        ],\n        \"totalPrice\": 100000,\n        \"createdAt\": \"2026-07-07T22:27:06.908Z\",\n        \"updatedAt\": \"2026-07-09T19:44:32.221Z\",\n        \"__v\": 15\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "updateQuantity",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"quantity\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BaseURL}}/api/cart/items/6a40c49f53006c0ae329e732",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "cart",
+                "items",
+                "6a40c49f53006c0ae329e732"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "i added the phone cuz potato stock was 1",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"quantity\": 2\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BaseURL}}/api/cart/items/6a40c49f53006c0ae329e732",
+                  "host": [
+                    "{{BaseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "cart",
+                    "items",
+                    "6a40c49f53006c0ae329e732"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "993"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"3e1-mAtEsW8GQohWjNMS9Np8vdQU3JU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Jul 2026 19:47:51 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"_id\": \"6a4d7d3aa00a43f31577d775\",\n        \"items\": [\n            {\n                \"product\": {\n                    \"_id\": \"6a493c3d817c6ca54965505d\",\n                    \"name\": \"potato\",\n                    \"description\": \"Quality depends\",\n                    \"price\": 100000,\n                    \"category\": \"6a4ab3267ca17c886e0530ae\",\n                    \"inStock\": true,\n                    \"stock\": 1,\n                    \"images\": [\n                        \"https://www.alamy.com/stock-photo-a-fresh-raw-yukon-gold-potato-146778180.html\"\n                    ],\n                    \"createdAt\": \"2026-07-04T17:00:45.497Z\",\n                    \"updatedAt\": \"2026-07-04T17:04:33.244Z\",\n                    \"__v\": 0\n                },\n                \"quantity\": 1,\n                \"price\": 100000,\n                \"_id\": \"6a4ffa20462f807b914ce9c9\"\n            },\n            {\n                \"product\": {\n                    \"_id\": \"6a40c49f53006c0ae329e732\",\n                    \"name\": \"Smartphone\",\n                    \"description\": \"high quality\",\n                    \"price\": 699,\n                    \"category\": \"6a4d5b9f37063579cd4d04eb\",\n                    \"inStock\": true,\n                    \"stock\": 45,\n                    \"images\": [\n                        \"https://www.sportskeeda.com/gaming-tech/5-best-flagship-smartphones-2024\"\n                    ],\n                    \"createdAt\": \"2026-06-28T06:52:15.665Z\",\n                    \"updatedAt\": \"2026-06-28T06:52:15.665Z\",\n                    \"__v\": 0\n                },\n                \"quantity\": 2,\n                \"price\": 699,\n                \"_id\": \"6a4ffad0462f807b914ce9cd\"\n            }\n        ],\n        \"totalPrice\": 101398,\n        \"createdAt\": \"2026-07-07T22:27:06.908Z\",\n        \"updatedAt\": \"2026-07-09T19:47:51.582Z\",\n        \"__v\": 16\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "removeItem",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{BaseURL}}/api/cart/items/{{productId}}",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "cart",
+                "items",
+                "{{productId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "emptyCart",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{BaseURL}}/api/cart",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "cart"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "order-api",
+      "item": [
+        {
+          "name": "checkout(remember to write ur shipping address)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();\r",
+                  "pm.environment.set(\"orderId\", json.data._id);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"shippingAddress\": {\r\n        \"fullName\": \"Ada Bug II\",\r\n        \"street\": \"Buggerton Street\",\r\n        \"city\": \"Bugum City\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BaseURL}}/api/orders",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "don't pay too much attention to the address",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"shippingAddress\": {\r\n        \"fullName\": \"Ada Bug II\",\r\n        \"street\": \"Buggerton Street\",\r\n        \"city\": \"Bugum City\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BaseURL}}/api/orders",
+                  "host": [
+                    "{{BaseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "orders"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "549"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"225-11bT7Mzj7x506bCOSe2/2pxxHqc\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Jul 2026 19:52:14 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"orderNumber\": \"ORD-383292\",\n        \"items\": [\n            {\n                \"product\": \"6a493c3d817c6ca54965505d\",\n                \"name\": \"potato\",\n                \"quantity\": 1,\n                \"price\": 100000,\n                \"_id\": \"6a4ffbee462f807b914ce9d4\"\n            },\n            {\n                \"product\": \"6a40c49f53006c0ae329e732\",\n                \"name\": \"Smartphone\",\n                \"quantity\": 2,\n                \"price\": 699,\n                \"_id\": \"6a4ffbee462f807b914ce9d5\"\n            }\n        ],\n        \"totalPrice\": 101398,\n        \"status\": \"pending\",\n        \"shippingAddress\": {\n            \"fullName\": \"Ada Bug II\",\n            \"street\": \"Buggerton Street\",\n            \"city\": \"Bugum City\"\n        },\n        \"_id\": \"6a4ffbee462f807b914ce9d3\",\n        \"createdAt\": \"2026-07-09T19:52:14.512Z\",\n        \"updatedAt\": \"2026-07-09T19:52:14.512Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "All orders",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BaseURL}}/api/orders",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "By Id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"shippingAddress\": {\r\n        \"fullName\": \"Ada Bug II\",\r\n        \"street\": \"Buggerton Street\",\r\n        \"city\": \"Bugum City\"\r\n    }\r\n}"
+            },
+            "url": {
+              "raw": "{{BaseURL}}/api/orders/{{orderId}}",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "orders",
+                "{{orderId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "change status of delivery",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\": \"shipped\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BaseURL}}/api/orders/{{orderId}}/status",
+              "host": [
+                "{{BaseURL}}"
+              ],
+              "path": [
+                "api",
+                "orders",
+                "{{orderId}}",
+                "status"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "changed it to shipped",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"status\": \"shipped\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BaseURL}}/api/orders/6a4fcc697fd30967e5ce6d46/status",
+                  "host": [
+                    "{{BaseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "orders",
+                    "6a4fcc697fd30967e5ce6d46",
+                    "status"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "542"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"21e-pLRP5RA/76o1Ml6wdqUshA7IUMg\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Jul 2026 19:53:31 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"shippingAddress\": {\n            \"fullName\": \"Ada Bug II\",\n            \"street\": \"Buggerton Street\",\n            \"city\": \"Bugum City\"\n        },\n        \"_id\": \"6a4fcc697fd30967e5ce6d46\",\n        \"orderNumber\": \"ORD-860536\",\n        \"items\": [\n            {\n                \"product\": \"6a4ac7628cacb94daf2c46c1\",\n                \"name\": \"Dress\",\n                \"quantity\": 2,\n                \"price\": 540,\n                \"_id\": \"6a4fcc697fd30967e5ce6d47\"\n            },\n            {\n                \"product\": \"6a4ac9cb8cacb94daf2c46c2\",\n                \"name\": \"Beans\",\n                \"quantity\": 2,\n                \"price\": 60070,\n                \"_id\": \"6a4fcc697fd30967e5ce6d48\"\n            }\n        ],\n        \"totalPrice\": 121220,\n        \"status\": \"shipped\",\n        \"createdAt\": \"2026-07-09T16:29:29.652Z\",\n        \"updatedAt\": \"2026-07-09T19:53:31.390Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
