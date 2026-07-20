@@ -3,8 +3,8 @@
 // [C] CONTROLLER LAYER  —  reads req, calls Model, sends res
 // Thin: no raw queries, no business rules, no formatting logic
 
-const Product      = require('../models/Product');        // imports [M]
-const Category = require('../models/Category')
+const Product      = require('../models/product.model');        // imports [M]
+const Category = require('../models/category.model')
 const asyncHandler = require('../utils/asyncHandler');
 const AppError = require('../utils/AppError');
 const mongoose = require('mongoose')

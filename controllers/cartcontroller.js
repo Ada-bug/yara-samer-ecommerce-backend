@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const Product = require("../models/Product");
-const Cart = require("../models/Cart");
+const Product = require("../models/product.model");
+const Cart = require("../models/cart.model");
 const asyncHandler = require("../utils/asyncHandler");
 const AppError = require("../utils/AppError");
 
@@ -193,17 +193,21 @@ const updateQuantity = asyncHandler(async (req, res) => {
 
 
 // DELETE /api/cart/items/:productId
+// here's the code that completey remove the item reqardless of qty:
+// -------------------------------------------------------------------
 const removeItem = asyncHandler(async (req, res) => {
-    const cart = await getOrCreateCart();
     // btw i couldn't tell whether this decreased the qty or
     // removed item completely so uhhh here u go
-    const item = cart.items.find(
+    const cart = await getOrCreateCart();
+
+
+    const exists = cart.items.some(
         item =>
             String(item.product._id || item.product) === req.params.productId
     );
 
 
-    if (!item) {
+    if (!exists) {
         throw new AppError(
             "Product not found in cart.",
             404
@@ -211,17 +215,10 @@ const removeItem = asyncHandler(async (req, res) => {
     }
 
 
-    // Decrease quantity by 1
-    item.quantity -= 1;
-
-
-    // Remove completely if quantity reaches 0
-    if (item.quantity <= 0) {
-        cart.items = cart.items.filter(
-            cartItem =>
-                String(cartItem.product._id || cartItem.product) !== req.params.productId
-        );
-    }
+    cart.items = cart.items.filter(
+        item =>
+            String(item.product._id || item.product) !== req.params.productId
+    );
 
 
     calculateTotal(cart);
@@ -234,20 +231,16 @@ const removeItem = asyncHandler(async (req, res) => {
         data: cart
     });
 });
-// here's the code that completey remove the item reqardless of qty:
 //-------------------------------------------------------------------
 // const removeItem = asyncHandler(async (req, res) => {
-
 //     const cart = await getOrCreateCart();
-
-
-//     const exists = cart.items.some(
+//     const item = cart.items.find(
 //         item =>
 //             String(item.product._id || item.product) === req.params.productId
 //     );
 
 
-//     if (!exists) {
+//     if (!item) {
 //         throw new AppError(
 //             "Product not found in cart.",
 //             404
@@ -255,10 +248,17 @@ const removeItem = asyncHandler(async (req, res) => {
 //     }
 
 
-//     cart.items = cart.items.filter(
-//         item =>
-//             String(item.product._id || item.product) !== req.params.productId
-//     );
+//     // Decrease quantity by 1
+//     item.quantity -= 1;
+
+
+//     // Remove completely if quantity reaches 0
+//     if (item.quantity <= 0) {
+//         cart.items = cart.items.filter(
+//             cartItem =>
+//                 String(cartItem.product._id || cartItem.product) !== req.params.productId
+//         );
+//     }
 
 
 //     calculateTotal(cart);
@@ -271,7 +271,6 @@ const removeItem = asyncHandler(async (req, res) => {
 //         data: cart
 //     });
 // });
-//-------------------------------------------------------------------
 
 // DELETE /api/cart
 const emptyCart = asyncHandler(async (req, res) => {

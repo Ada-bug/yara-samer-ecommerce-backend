@@ -45,12 +45,12 @@ Make sure you have the following installed on your machine:
     Create a `.env` file (see table)
    ```
 
-5. **Start the application part_1:**
+5. **Seeding:**
      ```bash
      npm run seed
      ```
 
-5. **Start the application part_2:**
+5. **Start the application:**
      ```bash
      npm run dev
      ```
@@ -60,7 +60,7 @@ Make sure you have the following installed on your machine:
 ├── config/          # Configuration file (it's empty tho)
 ├── controllers/     # Request handlers and business logic
 ├── models/          # Database schemas
-├── routes/          # Express route definitions
+├── routes/          # Express route definitionss
 ├── middleware/      # Contains the errorHandler and 404 Handler
 ├── utils/           # Conatins the AppError and AsyncHandler
 ├── scripts/         # For running the seed script

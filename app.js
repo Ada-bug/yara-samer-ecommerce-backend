@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const Product = require('./models/product.js')
+const Product = require('./models/product.model.js')
 const notFound = require('./middleware/notFound');
 const errorHandler = require('./middleware/errorHandler');
 const mongoSanitize = require('express-mongo-sanitize');//--> it's not comp with express 5
