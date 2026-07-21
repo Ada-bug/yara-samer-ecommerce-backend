@@ -7,7 +7,7 @@ A full-stack e-commerce platform built as a hands-on project for an online cours
 * **Shopping Cart**: Add, update, and remove items with real-time price totals.
 * **Simulated Checkout**: Mock payment gateway integration for order placement.
 
-# APIs made
+## APIs made
 * Category API
 * Product API
 * Cart API
@@ -27,7 +27,7 @@ Make sure you have the following installed on your machine:
 
 1. **Clone the repository:**
    ```bash
-    git clone https://github.com/Ada-bug/e-commerce-api
+    git clone https://github.com/Ada-bug/yara-samer-ecommerce-backend
    ```
 
 2. **Choose Directory:**
@@ -121,3 +121,20 @@ Make sure you have the following installed on your machine:
 | `GET` | `/api/orders` | Retrieve all orders. |
 | `GET` | `/api/orders/:id` | Retrieve an order by its ID. |
 | `PATCH` | `/api/orders/:id/status` | Update the status of an existing order. |
+
+
+## Important Notes
+* The express version is [4.22.2], which is vital in order for express-mongo-sanitize to work
+* The git history might be a little messy. I hadn't known about the pull request and
+fully worked on the [main] so I made a new repo and fetched everything.
+* In the cart API, I really didn't understand whether the `DELETE /api/cart/items/:id` was
+supposed to remove the item entirely or just decrease the quantity so wrote both, but the
+one that actually runs removes the item entirely.
+* In the [Dev.postman_environment.json], you'll find that the orderId variable is empty,
+that is because every time the `POST /api/orders` runs, mongoose generates a unique _id for
+the order, soo I put a post-script in the scripts tab which takes the _id and stores it in
+the orderId variable
+* The [appConfig.js] file is never used anywhere. Why? Well first the project doesn't explain
+what I'm supposed to put in it, so I just made a general appConfig file. Second, it's *REQUIRED*
+in the rubric to import the process.env in the app.js and the connect.js
+(the files that need the .env variables) so an appConfig, in this case, is literally useless.
